@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог Wolltex</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="catalog-page">
+
+<header class="header">
+    <div class="logo">Wolltex</div>
+    <nav>
+        <a href="index.html">Главная</a>
+    </nav>
+</header>
+
+<h1 class="title">Каталог солнечных панелей</h1>
+
+<div class="cart">
+    🛒 Корзина: <span id="cart-count">0</span> |
+    Сумма: <span id="total-price">0</span> €
+    <button onclick="checkout()">Оплатить</button>
+</div>
+
+<div class="products">
+
+    <div class="card">
+        <img src="http://www.leoton.ua/images/solar-panel/p100m-1.jpg">
+        <h3>Панель 100 Вт</h3>
+        <p>Идеально для дачи</p>
+        <p class="price">120€</p>
+        <button onclick="addToCart(120)">Купить</button>
+    </div>
+
+    <div class="card">
+        <img src="https://mechanika.in.ua/content/images/46/870x580l80mc0/soniachna-panel-turystychna-300-vt-2e-psplw300-4s-3m-mc4-anderson-xt60-76888166946824.webp">
+        <h3>Панель 300 Вт</h3>
+        <p>Для частного дома</p>
+        <p class="price">250€</p>
+        <button onclick="addToCart(250)">Купить</button>
+    </div>
+
+    <div class="card">
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxQTEhUTExMWFhUWFx8SGBUYGSAXGBYYFhoYFxUYGBcaHSggGBolGxgVIjEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OFxAQFy0dFR0rKystKy0rLS0rLTctKy0rLS0tLS0rKy0tNzctLS0tLS0tLSstLTcrKzc3Ky0tKy0rK//AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAwADAQEAAAAAAAAAAAAAAwQHAQIGBQj/xABGEAABAgMEBQgHBAkEAwEAAAABAAIDBBEhMUFREiIyUmEHEyNCYnGS0QYUU3KRodIFgbHBFhckM4KisuHwQ1RzwhU08Qj/xAAYAQEBAQEBAAAAAAAAAAAAAAAAAQIDBP/EAB0RAQACAgMBAQAAAAAAAAAAAAABEQIxAxIyUSH/2gAMAwEAAhEDEQA/ANxREQEREBERARF8v7V+3oMuaRXBtbqkCvdVB9RF539NJT2rPG3zXZvpjKm6K2y/WbZ81aHoEXwP0wlfas8TfNdmelkqTQRWknDSb5qUPuovhfpdK+1Z4m+aD0tlfbM8TfNWh91F8Q+lUrcYzK3U0m+afpXK+2Z42+ag+2i+K70olh/qsttGs3zXH6VyvtmeNvmlD7aL4h9Kpa/nWU95vn3LqfS2W9qzxN80H3UXypD7fgxXBjHAk4Ag/gV9VAREQEREBERAREQEREBERAREQFiPL+Omlvdd+LVtyxTl/eRFlqEjVdce5aw2ksja05fJWIDTovsOyMO01Qc67ed8SppeM/RiaztkYneau6IWg5KxIV022G44ZNcoGxnbzviVLKR3h7SHuBpmcipZSqHf59yF1n+ZLuJuJ7R/iOXeufWYntH+I5d6WU7zgIe6ot0su9Rh35KSdjvL3a7to4nMqNkZ++7DrFBZm3U0KjqN/OirQ3/krcxNRNTpH7I6x48VXZNRLOkfh1z5p+lO7j0bTSypFf4QoNJXDNRObaOcfeTtHIce5ResxPaP8R81Ue85EjX7SFPZO/Fq/QqwDkUiuP2hrOcRzTjQknLNb+uPJtqBERYUREQEREBERAREQEREBERAWMcvcUiLLUpsuwBxGYWzrGeXqJSLLarTquvFcWrfH6SdMlbMvOI8LfJWZeaeGxLRa0A6rd5vBRNj9lnhU8CY1YmozZHV7TV6aZQMmHZjwjyU8lNPD22i7dGR4LpBjdlvhCklJkh7ToMuxaMilCqY7uHhbl3LsIzuHhGXcuTGt2W/Dgu3Pdlnw4JRaWfmXc4+0V0t0ZngoGzDsxh1R5KefmiYjzos2z1RmVBDjndZh1QlCxNR3HQqRY0DZHHgqgjOsu8I8lcmJmuhqssaBs0ureqwfdqt+CtJaZsy7m2ioppE3DIcFAYx4fAZdytiL0TdVu0TWltwF/3fNVzE4N+HBKLe/wCReIf/ACFMOadgBlkt6WD8irv2+4funYW3hbwvNy+msdCIi5tCIiAiIgIiICIiAiIgIiICxvl6IESWqKnRdjxC2RY9y9AactWtzru9q6cXqEnTJGkbo+J81YgxG6MTUGyMTZrN4qJmjkfj/ZWIOhoxKh2yKWjebwXrpi0EKINwfE+aklorQ9tYYNl1SMDxXSGG2WH4/wBl2gOYHNqHUpgRkeClCJzxXY+ZyXLYg3fnwXZ5ZW52GIy7l3ZoZOwxGXclDvPObzjjoAVddU5niq8OI3cGGJ81bniznH0DqadlouqeCrw9DJ14xHkqiaYiN1KQwNUYnjbaq4cLNX5lXInNkso12yAbRfbwVfUssd8R5IJxEbzTBoDaNtTkLFAXN3MsSrI0OabY6ukcRdQcO9QP0MnfEZdyiPfcjDh6+aNp0JtqTi1bosM5GNH140BrzTrzxbwW5rzc3p0x0IiLk0IiICIiAiIgIiICIiAiIgLIOXdo05apIsfcK4t4ha+sj5dGAulquAsffU7uQXTi9wmWmSshtzN46vf2lZgwmaMSrnbIpRoPWbfrJDgDfGGDsq5KWFCaRE6QCjRg7McF7Zc1SExm87wj6l2hQoek2r3Upg0ce0pIMFtR0g+DvJdoMu0ubWI0WX0dxyCkivEgs3nYdUZe8uYcNm87DqjL3lNGgN323jB2XcuYUBu+MMHZdyg7T0Fmm6jnU090ZntKrCYzedeOqPqX0JqC3Tdrg699HW2ngqkGC2o6Rt4wd9KCeLCZVlHO2QdkZHtKoWss1neEfUvpRYDaspEB1Rg7I2XKlzAs1x8HeSIlDGc0zWdXSPVGQ7Xeq0RjN53hGXvK62XbzbOkbtGyjshbd/lFBEgDfbhg7jwRHuuRhrfXjQuJ5o3gAXt7RW4rEeRlg9dcQ4HojYAc25hbcvLzenXDQiIuTQiIgIiICIiAiIgIiICIiAsl5coVTL2gWPvNN0/ktaWUcuEEuMsQLhEH8ti6cXqEnTLmy/FuAvG7auYUoS2IdJg1Re7iLly+WdW7E/0Bdoco/RiGlzRiOHHMr1250hloFo1meJdoUpVzddlwvcOKhl5d1R/mCmgSri5gAt0RiOKTJDpGhcW3jHgu0vC4tvGPAriPKPtsxGI3e9cy8o6yzFuIyPFLWlqPL6xGkw6+DrL3XKnCl7RrMvHW4q3GgFryDeHgG0ZuqqUKXdUfdjxPFS0X4kCjmazDqg2O4H5qm6XOra24dYK06UfpMsvbW8ZOyKgiS7qNs6oxCRJKZsv0TDpM2qU0rbr1FGl+03q496lZLOEJhIvfmMPv4hRvgONLMW4jiqkvccjMKk641aeiNgNcWrbViXIxBInHE+yOPELbV5eb06YaERFyaEREBERAREQEREBERAREQFlHLi0ky1Abolv8IotXWS8ujrZbuf8A9V04ovKEnTMHtdW43nDsBd4UJxbEo0mjG1oO4fn810D7Phj2Aku+yJb1B+C9nVztFKwHVGqfgV3ZLPLmAMcToi4E3VUcs60WqeC7WZQ9UfmkkOseE7I3jDsldZdpBFhvbhwKjmYgtt3ceyuYMUAX5Y8CnVbXZyC7TcC11dMYXWuqqcvBfZqm9uBzKmjOt+8fmq8s+0W4t/EpSL5l3h7NRwsrcbi11qgfBdRuq7ZGBU+lrMtwz4OVMv2bcBipEErLZd/NMq11NOlxw/8AoXBgus1T1cOK5ZE6NnvBdoRFAe7+pWGXtuReE4TbiWkDmjeKYhbYsU5Gnftjv+I/1BbWvJzenXDQiIuTQiIgIiICIiAiIgIiICIiAsu5Z/tKLBMvzcRzKh9dE0rQNotRWQ8u8ShlrAbHm3uaunF6hMtPAO9KJof68THHshSM9KprRf8AtD9luIx0a4L4D4/ZZ8933l3gTOrE1GbIzzb2l6pmPjFPtQvSmZsrMPvz/su0t6UzWk39ofccsjwXn4MzdqMv7X1KaTm6Pb0bNntZHtLMzHxYfVh+l05/uImOWVmClf6WTeEw+4ZZW4ZrzvrQ9mz+bL3l3bODcbhnl3qxMfCpffmvSmb0j+0PrUYjI1sSF6TzX+4f1ce+q+R9oR+kf0bNrtce0o4Ux2G4b31J+fEeij+lE1q9O+4DC6h4KCD6VTdRWYfeMvJfPiTgOjqMsAGPG3avVVs0KjUZ8/qViviTb0J9KpvQb077+GXd3J+lE3QftD8MszwXyDNjm2dGzaNttbh2rlE6cG43DPj2laj4z+tN5JPtyPGm3MixXPbzRdQ0vBFDdxK2FYdyLRwZ1w0WjonWiuYzK3FeXl9OuGhERcmhERAREQEREBERAREQEREBZBy8OFZaorZEt+5q19Y/y8kVl6gnbuNMG8Fvj9JOmTuc3c+Z3V2gPboxOj6o6xzao3OZuu8Q3fdUks5mjEq12wKaw3m9lemWUUJ7bNT5lTyb2abaw62XaRycq8J7N13iH0qxJuh842rX0pvDI9lSSFYubufzHJchzdz5nJcF7N13iGXurlrmWarvEPpU/FXftF7edfqde7SOZUEJ7dzLEqxO6BivNHU0z1hmeyq7NCyx2HWGH8K1CLMV7NWjOqMTaaFVw5tRqfMq3H5sc3QOtaDtC817KrVZZqu8Q+lWGZTF7OabqdY26RyFn4qFz27mWJU7nQ+aZqvrpE7Qyb2e9QFzN12HWH0oPfcijm+vOAbQ80ca4tW6rCuRRzfXnUBB5o3kHFvALdV5uX03joREXNoREQEREBERAREQEREBERAWOcvhbWXqSNu4VwZx7lsaxnl/ArL1dTbwrgz+y1jNSMkMRuZ+Ay71NLOZoxLXV0BTVG83tKmWt3vlwU0qxujEJeBqClh3m5Bde0pTiG9ubvCPNWJV7NNpcXUpg0VuPaVKHDb7Rvwdl7qsy8JpcKxWjVydkeyp2laRFzB1nYdUZe8uYbmGms7wj6lHEl2+1ZeMH5e4kCA2zpWfB/0JZT6k05nOvo59NM01Rme0qwLLNZ2HVGfvKSahNER/Ss2zg/M9hVwxtnSswwfn7i12Sn0I72Vh0c7YFdUX29pVyWWazrt0fUuZiE3UpFadQYP49lQFgp+8bcN76VYySlwuZzTbXV0yNkZN4qHVzOGA80o3mm64rpmyhybbco26O+MMDn3K906tD5EqevuoTXmjhxbxW8LBuRBo9edRwJ5o2UI6zeH+VW8rhyTctRoREWFEREBERAREQEREBERAREQFi/L/AA6ultYDbvrkzILaFjHL7DJdL3Wad5AwZmbVcdjIHQO0355dymgS+rE12bIxv1mqMwDw8Q3RxU0vLOLYl1jB1hvN4roKrZftN8QVmVlKuA02CzFwyKhZLOyHxHmrErKPLgABdvDAE5oIXSZ3mX7wyXEKTII12eMKQyzuHxGXeuIco7IeIeairE3KERX6zLHnrDeKqiUNmsy7eGauzsq4RXigrpnEZniqvqrrLBdvDPvVRPGlTqa7NgdYcVF6vZtMu3gpZmUeCywWsB2hjXiovVnUuFwxGXeqJeY6Nus3bNlbRY1RQ4VOs3DPe7lPDlnBgNlNMjaGGjxUYlzZs3bzd7vVpLaFyIwqTzjUfuj/AFDyW8rCORSGRPONn7oiwg9cZFbuuWe1ERFkEREBERAREQEREBERAREQFi/L9Cc50vQE7dwrgxbQsS//AEE06cvZZR/4MVx2MoMu7dd8DkpYMu/QiHQdY0YHeaqgB4/4FYlwdGJfsD+pq6iJsB26fgrMnKPLgAxxsyORVZhU8qdYUy/IqDj1Z+47DArrCln1Go6/dKj0uOK4hutCD6E3KvER+o794eqd5yqmVfZqOu3TmVJNOPOPt67v6ioHu44D8VRampSJqajtgHZPFdGyz6bDsMDkuJt2xb1B/wBlFCd+SqLol36AJa6heaGhybVRNl32UY42bpzXZrtQe+f+ir2/L81UaVyKQXCfcS1wHNEWgjrBbwsD5Ev/AH3f8R/rC3xcs9rAiIsKIiICIiAiIgIiICIiAiIgLFeX2MWvl6OIsfcaYNW1LE+X2M4RYABwcfk1ax2Mn9bib7vEcu9Ty07E0YnSP2R1jm3ioRMuz+Qy7lPLzLqPFb2gGwbzeC60zaJs/F9rE8bvNWJSdiaQ6R928cjxVXTP+AZK19nRnB4Ip4Ruu4KUtq3rL9914xOS4ZNPqNd14xKlbNO7N46jfpXaHMOqNnwN+lIgtzNTkQxYnSO23dY7x4qEzkSn7x9w6xzPFXpuM4xXnVte7qN3j2VA+KezcOo36VrrKdnaZnotIfSP2W9Y8eKrw56L7WJ4z5q3NzLjobNjANhvHsqFkc9nDqNH5J1Ldj9oRdBo52Je7ru7HFRunYlP3j7t4596lMclrRZQOJFgFK6NcOC6GMaX4ZDPuV6pbQORKYc6feC5xHNVoSSK6Qw+9b2sE5FozjPuBP8ApnAbw4Le1xz21AiIsKIiICIiAiIgIiICIiAiIgLzfpP6HwZ1wMYA6OzfUVvtB7l6REHgP1USe4P5vqXZnJXJiuo22w7X1L3qK9pHgv1VSXsx/N9S7w+S6TBqIYr/ABd29xXukS5HgP1USW4Pi76lwOSmT3B8Xea0BEuR4J3JbKEkloqTU2uvNua6nkqk9wfF31L36J2keEdyWyRpWGLBQWuw/iXA5KpH2Y+LvqXvES5Hhv1XyVKc2M73Y/fwXH6rpL2Tf5vNe6RO0lPL/YXoTLykXnYLQ11xIraL6WnNeoRFLBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERB//Z">
+        <h3>Панель 500 Вт</h3>
+        <p>Максимальная мощность</p>
+        <p class="price">420€</p>
+        <button onclick="addToCart(420)">Купить</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

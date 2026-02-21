@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url("https://imgur.com/a/CHEQIvP") center/cover fixed no-repeat;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: orange;
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Hero */
+.hero {
+    height: 90vh;
+    background: url("https://images.wallpaperscraft.ru/image/single/trava_gazon_pole_891294_1920x1080.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.hero-overlay {
+    background: rgba(0,0,0,0.6);
+    padding: 60px;
+    border-radius: 25px;
+    text-align: center;
+    color: white;
+}
+
+.hero-overlay h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: orange;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: black;
+}
+
+/* Shop */
+.title {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.cart {
+    text-align: center;
+    margin: 20px;
+    font-size: 18px;
+}
+
+.cart button {
+    padding: 8px 15px;
+    margin-left: 10px;
+    background: orange;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 60px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card button {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    background: black;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card button:hover {
+    background: orange;
+}
+
+.price  {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+    .catalog-page {
+    margin: 0;
+    min-height: 100vh;
+    background: url("https://i.imgur.com/c3fxG0b.jpeg") center center / cover no-repeat fixed;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+/* затемнение */
+.catalog-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 0;
+}
+
+/* чтобы контент был поверх затемнения */
+.catalog-page * {
+    position: relative;
+    z-index: 1;
+}
